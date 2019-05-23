@@ -1,0 +1,23 @@
+<a href="/client/recipes">Home</a>
+
+<h1><%= @recipe["title"] %></h1>
+<h3>Chef: <%= @recipe["chef"] %></h3>
+<h5>Prep Time: <%= @recipe["formatted"]["prep_time"] %></h5>
+<h4>Ingredients</h4>
+<ul>
+  <% @recipe["formatted"]["ingredients"].each do |ingredient| %>
+    <li>
+      <%= ingredient %>
+    </li>
+  <% end %>
+</ul>
+
+<h5>Directions</h5>
+<ol>
+  <% @recipe["formatted"]["directions"].each do |direction| %>
+    <li><%= direction %></li>
+  <% end %>
+</ol>
+
+<img src="<%= @recipe["image_url"] %>" alt="<%= @recipe["title"] %>"/>
+
